@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { connect } from 'react-redux';
 import { getSmurfs } from '../actions';
+import FormikFormComponent from './Form';
 
 const App = ({ getSmurfs, error, isFetching, smurfs }) => {
   useEffect( () => {
@@ -12,8 +13,6 @@ const App = ({ getSmurfs, error, isFetching, smurfs }) => {
   return (
     <div className='App'>
       <h1>SMURFS! 2.0 W/ Redux</h1>
-      {isFetching && <p>Loading...</p>}
-      {error !== '' && <p>{`ERROR: ${error}`}</p>}
       {smurfs.map(smurf => 
       <div>
         <h3>name: {smurf.name} </h3>
@@ -21,7 +20,7 @@ const App = ({ getSmurfs, error, isFetching, smurfs }) => {
         <p>age: {smurf.age}</p>
       </div>)}
       <button onClick={getSmurfs}>Update Smurfs</button>
-
+      <FormikFormComponent />
     </div>
   );
 }
