@@ -14,7 +14,12 @@ const App = ({ getSmurfs, error, isFetching, smurfs }) => {
       <h1>SMURFS! 2.0 W/ Redux</h1>
       {isFetching && <p>Loading...</p>}
       {error !== '' && <p>{`ERROR: ${error}`}</p>}
-      {smurfs.map(smurf => <span>{smurf.name}</span>)}
+      {smurfs.map(smurf => 
+      <div>
+        <h3>name: {smurf.name} </h3>
+        <p>height: {smurf.height}</p>
+        <p>age: {smurf.age}</p>
+      </div>)}
       <button onClick={getSmurfs}>Update Smurfs</button>
 
     </div>
