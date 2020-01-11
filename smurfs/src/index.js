@@ -13,10 +13,6 @@ import { reducer } from "./reducers";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
-// const composeEnhancer = (compose) => applyMiddleware(thunk) || compose;
-
-// const store = createStore(reducer, composeEnhancer(applyMiddleware(logger)))
-
 ReactDOM.render(
 <Provider store={store}>
     <App />

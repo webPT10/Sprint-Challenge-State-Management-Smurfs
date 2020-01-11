@@ -33,7 +33,7 @@ const FormikFormComponent = withFormik ({
             age: age || ''
         };
     },
-    handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+    handleSubmit(values, { resetForm, setSubmitting }) {
         console.log('values into post are', values);
         axios
             .post('http://localhost:3333/smurfs', values)
